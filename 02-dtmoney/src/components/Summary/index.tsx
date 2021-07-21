@@ -39,7 +39,10 @@ export function Summary() {
           <img src={incomeImg} alt="Entradas" />
         </header>
         <strong>
-          R$ {summary.deposits}
+          {new Intl.NumberFormat('pt-br', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(summary.deposits)}
         </strong>
       </div>
       <div>
@@ -48,7 +51,11 @@ export function Summary() {
           <img src={outcomeImg} alt="Saídas" />
         </header>
         <strong>
-          - R$ {summary.withdraws}
+          -
+          {new Intl.NumberFormat('pt-br', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(summary.withdraws)}
         </strong>
       </div>
       <div className="highlight-background">
@@ -57,7 +64,10 @@ export function Summary() {
           <img src={totalImg} alt="Total" />
         </header>
         <strong>
-          R$ {summary.total}
+          {new Intl.NumberFormat('pt-br', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(summary.total)}
         </strong>
       </div>
     </Container>
